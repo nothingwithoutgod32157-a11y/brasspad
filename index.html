@@ -7,9 +7,104 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<p>Loading BrassPad…</p>
-<script>location.replace('./app.html')</script>
+  <header>
+    <div class="brand">
+      <div class="logo">🥽</div>
+      <div>
+        <h1>BRASSPAD</h1>
+        <p>Everything in one pad</p>
+      </div>
+    </div>
+    <div class="mode">
+      <button class="on" data-intent="rent" type="button">Rent</button>
+      <button data-intent="buy" type="button">Buy</button>
+    </div>
+  </header>
+  <main>
+    <section id="pg-search">
+      <h2 class="hero">Pads for rent, low note to high.</h2>
+      <p class="sub" id="heroSub">Search, tour, apply, message, list — all inside BrassPad.</p>
+      <div class="search">
+        <input id="q" value="Akron, OH" list="citylist" placeholder="City" />
+        <datalist id="citylist"></datalist>
+        <button class="go" id="searchBtn" type="button">Search</button>
+      </div>
+      <div class="row" id="cityChips"></div>
+      <div class="row">
+        <button class="chip on" data-type="all">All</button>
+        <button class="chip" data-type="apartment">Apartments</button>
+        <button class="chip" data-type="house">Houses</button>
+        <button class="chip" data-pets="1">Pets ok</button>
+      </div>
+      <div class="row">
+        <button class="chip on" data-beds="any">Any beds</button>
+        <button class="chip" data-beds="0">Studio</button>
+        <button class="chip" data-beds="1">1</button>
+        <button class="chip" data-beds="2">2</button>
+        <button class="chip" data-beds="3">3+</button>
+      </div>
+      <div class="row">
+        <label class="range">Max <input id="maxRent" type="range" min="400" max="8000" step="50" value="8000" /> <span id="maxLbl">any</span></label>
+        <select id="sort">
+          <option value="price">Lowest first</option>
+          <option value="sqft">$/ft² lowest</option>
+          <option value="soon">Soonest</option>
+          <option value="deal">Best deal</option>
+        </select>
+      </div>
+      <p class="meta" id="meta"></p>
+      <div class="grid" id="grid"></div>
+    </section>
+    <section id="pg-map" class="hidden">
+      <h3 class="page" style="font-family:Oswald,sans-serif;font-size:28px">Map</h3>
+      <p class="muted">Tap a pin for the pad.</p>
+      <div id="map"></div>
+    </section>
+    <section id="pg-saved" class="hidden page">
+      <h3>Saved</h3>
+      <p class="muted">Compare up to 3. Tours and apps stay here too.</p>
+      <div class="actions" style="margin:12px 0">
+        <button class="go" id="compareBtn" type="button">Compare</button>
+      </div>
+      <div class="grid" id="savedGrid"></div>
+    </section>
+    <section id="pg-inbox" class="hidden page">
+      <h3>Inbox</h3>
+      <p class="muted">Tours, applications, and owner replies.</p>
+      <div class="list" id="inboxList" style="margin-top:14px"></div>
+    </section>
+    <section id="pg-me" class="hidden page">
+      <h3>You</h3>
+      <p class="muted" id="meLine"></p>
+      <div class="actions" style="margin:14px 0">
+        <button class="go" id="listBtn" type="button">List a pad</button>
+        <button class="ghost" id="calcBtn" type="button">Affordability</button>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Applications</b><span id="appCount">0</span></div>
+        <div class="fact"><b>Tours</b><span id="tourCount">0</span></div>
+        <div class="fact"><b>Your listings</b><span id="listCount">0</span></div>
+        <div class="fact"><b>Saved</b><span id="saveCount">0</span></div>
+      </div>
+      <h4 style="margin:18px 0 8px">Your listings</h4>
+      <div class="list" id="myList"></div>
+      <h4 style="margin:18px 0 8px">Applications</h4>
+      <div class="list" id="myApps"></div>
+    </section>
+  </main>
+  <nav class="nav">
+    <button class="on" data-tab="search" type="button"><b>⌂</b>Search</button>
+    <button data-tab="map" type="button"><b>◎</b>Map</button>
+    <button data-tab="saved" type="button"><b>♥</b>Saved</button>
+    <button data-tab="inbox" type="button"><b>✉</b>Inbox</button>
+    <button data-tab="me" type="button"><b>●</b>You</button>
+  </nav>
+  <dialog id="dlg"></dialog>
+  <div class="toast" id="toast"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
