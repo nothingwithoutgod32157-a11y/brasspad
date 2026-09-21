@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>BrassPad</title>
+  <meta name="description" content="Find apartments and homes you can afford, then connect to reachable jobs through Onramp." />
+  <title>BrassPad — Apartments That Fit the Work</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -15,18 +16,29 @@
       <div class="logo">🥽</div>
       <div>
         <h1>BRASSPAD</h1>
-        <p>Everything in one pad</p>
+        <p>Apartments that fit the work</p>
       </div>
     </div>
-    <div class="mode">
-      <button class="on" data-intent="rent" type="button">Rent</button>
-      <button data-intent="buy" type="button">Buy</button>
+    <div class="header-actions">
+      <a class="jobs-link" href="https://vesper-mu-ecru.vercel.app" target="_blank" rel="noreferrer">Find jobs ↗</a>
+      <div class="mode">
+        <button class="on" data-intent="rent" type="button">Rent</button>
+        <button data-intent="buy" type="button">Buy</button>
+      </div>
     </div>
   </header>
   <main>
     <section id="pg-search">
       <h2 class="hero">Pads for rent, low note to high.</h2>
       <p class="sub" id="heroSub">Search, tour, apply, message, list — all inside BrassPad.</p>
+      <div class="work-bridge">
+        <div>
+          <span>BRASSPAD × ONRAMP</span>
+          <strong>Find the work. Then find the pad.</strong>
+          <p>Browse reachable AI jobs, then use the salary in BrassPad's affordability tool.</p>
+        </div>
+        <a href="https://vesper-mu-ecru.vercel.app" target="_blank" rel="noreferrer">Browse jobs</a>
+      </div>
       <div class="search">
         <input id="q" value="Akron, OH" list="citylist" placeholder="City" />
         <datalist id="citylist"></datalist>
@@ -82,6 +94,20 @@
       <div class="actions" style="margin:14px 0">
         <button class="go" id="listBtn" type="button">List a pad</button>
         <button class="ghost" id="calcBtn" type="button">Affordability</button>
+      </div>
+      <div class="revenue-grid">
+        <article>
+          <span>FOR RENTERS</span>
+          <h4>Work-to-home plan</h4>
+          <p>Start with a reachable job, calculate the monthly housing range, then save matching pads.</p>
+          <a href="https://vesper-mu-ecru.vercel.app" target="_blank" rel="noreferrer">Open Onramp Jobs ↗</a>
+        </article>
+        <article>
+          <span>FOR PROPERTY OWNERS</span>
+          <h4>Free listings now. Paid boosts next.</h4>
+          <p>Build renter demand first, then monetize verified and featured placement without charging people to browse.</p>
+          <a href="https://divinebloodco.xyz" target="_blank" rel="noreferrer">Partner through Divine Blood Co. ↗</a>
+        </article>
       </div>
       <div class="facts">
         <div class="fact"><b>Applications</b><span id="appCount">0</span></div>
