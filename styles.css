@@ -9,11 +9,19 @@ header{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-
 .brand h1{font-family:Oswald,sans-serif;letter-spacing:.08em;font-size:18px}
 .brand p{color:var(--mute);font-size:11px}
 .mode{display:flex;background:#14110e;border:1px solid var(--line);border-radius:999px;padding:3px}
+.header-actions{display:flex;align-items:center;gap:10px}
+.jobs-link{color:var(--brass);text-decoration:none;font-size:12px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:8px 12px;white-space:nowrap}
+.jobs-link:hover{border-color:var(--brass);background:#1b1610}
 .mode button{border:0;background:0;color:var(--mute);border-radius:999px;padding:6px 12px}
 .mode button.on{background:var(--brass);color:#1a140c;font-weight:600}
 main{max-width:1180px;margin:0 auto;padding:20px 16px 96px}
 h2.hero{font-family:Oswald,sans-serif;font-size:clamp(32px,5.5vw,56px);line-height:.95;letter-spacing:-.02em;max-width:16ch}
 .sub{color:var(--mute);margin:12px 0 18px;max-width:48ch}
+.work-bridge{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 18px;padding:14px 16px;border:1px solid #5a452b;border-radius:16px;background:linear-gradient(120deg,#21180f,#12100d);max-width:760px}
+.work-bridge span,.revenue-grid span{display:block;color:var(--brass);font-size:9px;letter-spacing:.14em;font-weight:700}
+.work-bridge strong{display:block;margin-top:4px;font-family:Oswald,sans-serif;font-size:20px}
+.work-bridge p{color:var(--mute);font-size:12px;margin:3px 0 0;line-height:1.45}
+.work-bridge a,.revenue-grid a{color:#1a140c;background:var(--brass);text-decoration:none;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:700;white-space:nowrap}
 .search{display:flex;gap:8px}
 .search input,.field,select,textarea{background:#14110e;border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%}
 .search input{flex:1}
@@ -61,6 +69,11 @@ label{display:block;font-size:13px;color:var(--mute);margin:10px 0 4px}
 .item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}
 .item h4{font-size:15px}
 .muted{color:var(--mute);font-size:13px}
+.revenue-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 20px}
+.revenue-grid article{border:1px solid var(--line);border-radius:16px;padding:16px;background:linear-gradient(145deg,#19140f,#100d0a)}
+.revenue-grid h4{font-size:18px;margin:6px 0}
+.revenue-grid p{color:var(--mute);font-size:12px;line-height:1.5;margin:0 0 14px}
+.revenue-grid a{display:inline-block;background:transparent;color:var(--brass);border:1px solid #5a452b}
 .page h3{font-family:Oswald,sans-serif;font-size:28px;margin-bottom:6px}
 .hidden{display:none!important}
 .cal{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -69,3 +82,4 @@ label{display:block;font-size:13px;color:var(--mute);margin:10px 0 4px}
 .range{display:flex;align-items:center;gap:8px;color:var(--mute);font-size:13px}
 .range input{accent-color:var(--brass);width:140px}
 .leaflet-container{background:#1a1612;font-family:inherit}
+@media(max-width:640px){header{align-items:flex-start}.brand p{display:none}.header-actions{gap:6px}.jobs-link{padding:7px 9px}.work-bridge{align-items:flex-start;flex-direction:column}.revenue-grid{grid-template-columns:1fr}}
